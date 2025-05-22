@@ -7,7 +7,9 @@ export default function Sidebar() {
       <Link href="/dashboard" className="flex items-center space-x-2 hover:text-black-200">
         <span>Dashboard</span>
       </Link>
-  
+      <Link href="/login" className="flex items-center space-x-2 hover:text-black-200">
+        <span>Logout</span>
+      </Link>
     </nav>
   </aside>
   );

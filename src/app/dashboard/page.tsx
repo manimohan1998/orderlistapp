@@ -17,6 +17,7 @@ import {
   CartesianGrid
 } from "recharts";
 import { getItems } from "../service/service";
+import { redirect } from "next/navigation";
 const CustomTooltip = ({ active, payload, label }: TooltipProps<any, any>) => {
   if (active && payload && payload.length) {
     const filteredItems = payload.filter((entry) => entry.value > 0);
@@ -204,6 +205,12 @@ const orderItemsData = orders.map((order: any) => {
     document.body.removeChild(link);
   };
 
+const singleview = (data:any)=>{
+console.log(data)
+localStorage.setItem("selectedtype",data)
+ redirect('dashboard/view-details'); // after login
+}
+
 return (
   <main className="p-6 sm:p-10 bg-gradient-to-b from-gray-100 to-white min-h-screen">
     <h1 className="text-4xl font-bold text-center text-indigo-700 mb-10">
@@ -234,7 +241,7 @@ return (
     }
 
     return (
-      <div
+      <div onClick={()=> singleview(status.status)}
         key={status.status}
         className={`p-5 rounded-xl shadow border border-gray-200 ${bgColor} ${textColor}`}
       >

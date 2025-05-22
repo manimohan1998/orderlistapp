@@ -11,7 +11,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
       <button onClick={toggleSidebar} className="text-xl mr-4">
         ☰
       </button>
-      <h1 className="text-lg font-semibold text-teal-600">Restaurant Dashboard</h1>
+      <h1 className="text-lg font-semibold text-teal-600">Restaurant App</h1>
     </header>
   );
 };
